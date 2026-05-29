@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nova System — Nova Kim Portfolio</title>
+  <link rel="stylesheet" href="style_common.css">
+  <link rel="stylesheet" href="style_hero.css">
+  <link rel="stylesheet" href="style_about.css">
+  <link rel="stylesheet" href="style_skills.css">
+  <link rel="stylesheet" href="style_works.css">
+  <link rel="stylesheet" href="style_contact.css">
+  <link rel="stylesheet" href="style_hud_bg.css">
+</head>
+
+<body>
+
+  <!-- ================================================
+       공통 고정 토글 버튼 (모든 섹션에서 항상 우측 상단 고정)
+  ================================================= -->
+  <button class="system-toggle" id="systemToggle" type="button" aria-label="사이드 메뉴 열기/닫기">
+    <span class="hamburger" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+    <span class="status-text">OFFLINE</span>
+  </button>
+
+  <!-- ================================================
+       오버레이 + 사이드 메뉴
+  ================================================= -->
+  <div class="menu-overlay" id="menuOverlay" aria-hidden="true"></div>
+
+  <aside class="side-menu" id="sideMenu" aria-hidden="true" aria-label="사이드 내비게이션">
+    <div class="side-menu-top">
+      <span class="side-status">ONLINE</span>
+      <button class="side-close" id="sideClose" type="button" aria-label="사이드 메뉴 닫기">X</button>
+    </div>
+    <nav class="side-nav">
+      <ul>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#skills">SKILLS</a></li>
+        <li><a href="#works">WORKS</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+
+  <main class="wrap">
+
+    <!-- ================================================
+         1. HERO
+    ================================================= -->
+    <section class="hero-wrap" id="hero" aria-label="메인 히어로">
+      <header class="hero-top">
+        <p class="hero-logo"><span aria-hidden="true"></span>PORTF.SYS</p>
+        <nav class="hero-nav" aria-label="메인 내비게이션">
+          <ul class="menu">
+            <li><a href="#about">ABOUT ME</a></li>
+            <li><a href="#skills">SKILLS</a></li>
+            <li><a href="#works">WORKS</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <div class="hero-frame">
+        <!-- 왼쪽: 텍스트 + HUD 콜아웃 버튼 -->
+        <div class="hero-copy">
+          <div class="hero-subtitle-wrap">
+            <span class="hero-line" aria-hidden="true"></span>
+            <p class="hero-subtitle">FRONTEND DEVELOPER &amp; WEB PUBLISHER</p>
+          </div>
+
+          <h1 class="hero-name">From Stardust to Interface,</h1>
+
+          <p class="hero-title">
+            <span>Together</span>
+            <span>We Shine</span>
+          </p>
+
+        </div>
+
+        <!-- 오른쪽: 비디오 카드 + 호버 시 HUD 버튼 -->
+        <div class="hero-media-card">
+          <div class="media-frame">
+            <video class="hero-video" autoplay muted loop playsinline>
+              <source src="임시.mp4" type="video/mp4">
+            </video>
+            <!-- 호버 시 위에서 내려오는 HUD 콜아웃 버튼 -->
+            <div class="hero-callout-wrap">
+              <a href="#contact" class="hud-cta">
+                <span class="hud-label">SYS / TARGET</span>
+                <span class="hud-text">대상 추적하기</span>
+                <span class="hud-sub">LOCK_ON &#9654;</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 히어로 인버트 오버레이 (backdrop-filter: invert, 원형 클립) -->
+      <div class="hero-invert-circle" id="heroInvertCircle" aria-hidden="true"></div>
+
+      <!-- 히어로 커스텀 커서 -->
+      <div class="hero-cursor" id="heroCursor" aria-hidden="true">
+        <svg viewBox="-65 -65 130 130" width="130" height="130" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <path id="hctp" d="M -40,0 a 40,40 0 1,1 80,0 a 40,40 0 1,1 -80,0"/>
+          </defs>
+          <circle r="58" fill="none" stroke="rgba(255,255,255,0.45)" stroke-width="1"/>
+          <circle r="4" fill="rgba(255,255,255,0.9)"/>
+          <text font-size="16" fill="rgba(255,255,255,0.88)" font-family="'Courier New', monospace">
+            <textPath href="#hctp" textLength="251" lengthAdjust="spacing">Check the video</textPath>
+          </text>
+        </svg>
+      </div>
+    </section>
+
+
+    <!-- ================================================
+         2. ABOUT ME  (3-1 Philosophy / 3-2 Mono Sys / 3-3 Why Mono)
+    ================================================= -->
+    <section class="about-wrap" id="about" aria-label="About Me">
+    
+    <!-- 3-1 PHILOSOPHY -->
+      <article class="about-philosophy" id="about-philosophy">
+        <div class="about-shell">
+          <div class="frame-line tl" aria-hidden="true"></div>
+          <div class="frame-line tr" aria-hidden="true"></div>
+          <div class="frame-line bl" aria-hidden="true"></div>
+          <div class="frame-line br" aria-hidden="true"></div>
+          <div class="hud-top">
+            <span>NOVA.SYS / ABOUT</span>
+            <span>01 PHILOSOPHY</span>
+          </div>
+          <div class="hud-bottom">
+            <span>SYSTEM ONLINE</span>
+            <span>BELIEF MATRIX</span>
+          </div>
+          <div class="phil-inner">
+            <p class="phil-section-label">01 PHILOSOPHY</p>
+
+            <div class="phil-headline">
+              <p>I am NOT the brightest star.</p>
+              <p>But I know EVERY CONSTELLATION AROUND ME.</p>
+            </div>
+
+            <div class="phil-body">
+            <!-- 레이더 -->
+            <figure class="radar-hud" aria-label="레이더 스캐너 애니메이션">
+              <div class="radar-frame-corners" aria-hidden="true">
+                <span></span><span></span><span></span><span></span>
+              </div>
+              <div class="radar-screen" aria-hidden="true">
+                <div class="radar-rings"></div>
+                <div class="radar-cross h"></div>
+                <div class="radar-cross v"></div>
+                <div class="radar-sweep"></div>
+                <div class="radar-blip b1"></div>
+                <div class="radar-blip b2"></div>
+              </div>
+              <figcaption class="radar-coords">
+                <span>x: 00</span>
+                <span>y: 00</span>
+              </figcaption>
+            </figure>
+
+            <!-- 구분선 -->
+            <div class="phil-divider" aria-hidden="true"></div>
+
+            <!-- 텍스트 -->
+              <div class="phil-text">
+                <p>저는 가장 밝게 빛나는 별이 아닙니다.<br>
+                하지만 그렇기 때문에,<br>
+                주변의 모든 별을 봅니다.</p>
+                <p>혼자 빛나는 사람은 도움이 필요 없지만,<br>
+                저는 부족하기에 주변에 묻고 배우고<br>
+                함께 만듭니다.</p>
+                <p>그 과정에서 저는 어떤 팀에도 녹아드는<br>
+                사람이 됐습니다.<br>
+                이 부족함이 저를 더욱 발전시킬 수 있는<br>
+                이유가 됐습니다.</p>
+              </div>
+            </div>
+        </div><!-- /phil-inner -->
+        </div><!-- /about-shell -->
+      </article>
+
+      <!-- 3-2 MONO SYS -->
+      <article class="about-mono-sys" id="about-mono-sys">
+        <div class="about-shell">
+          <div class="frame-line tl" aria-hidden="true"></div>
+          <div class="frame-line tr" aria-hidden="true"></div>
+          <div class="frame-line bl" aria-hidden="true"></div>
+          <div class="frame-line br" aria-hidden="true"></div>
+          <div class="hud-top">
+            <span>NOVA.SYS / ABOUT</span>
+          </div>
+          <div class="hud-bottom"><span>SYSTEM ONLINE</span><span>VISUAL IDENTITY</span></div>
+        <div class="mono-inner">
+        <p class="mono-section-label">02 MONO SYS</p>
+
+        <div class="mono-video-area">
+          <div class="video-placeholder">
+            <!-- 영상 준비 후 아래 img/video 태그로 교체 -->
+            <span>영상</span>
+          </div>
+        </div>
+        </div><!-- /mono-inner -->
+        </div><!-- /about-shell -->
+      </article>
+
+      <!-- 3-3 WHY MONO -->
+      <article class="about-why-mono" id="about-why-mono">
+        <div class="about-shell">
+          <div class="frame-line tl" aria-hidden="true"></div>
+          <div class="frame-line tr" aria-hidden="true"></div>
+          <div class="frame-line bl" aria-hidden="true"></div>
+          <div class="frame-line br" aria-hidden="true"></div>
+          <div class="hud-top"><span>NOVA.SYS / ABOUT</span><span>03 WHY MONO</span></div>
+          <div class="hud-bottom"><span>SYSTEM ONLINE</span><span>DESIGN PHILOSOPHY</span></div>
+        <div class="why-inner">
+        <p class="why-section-label">03 WHY MONO</p>
+
+        <h2 class="why-headline">
+          <strong>모노톤</strong> 은 저를 설명하는 방식입니다.
+        </h2>
+        <p class="why-sub">색이 아니라 태도이고, 스타일이 아니라 철학입니다.</p>
+
+        <ul class="why-list">
+          <li>
+            <div class="why-item-head">
+              <span class="why-num">01</span>
+              <span class="why-label">어디든 어울리는 사람</span>
+              <span class="why-tag">#협업</span>
+            </div>
+            <p>흑백은 어떤 색과도 충돌하지 않습니다. 저도 그렇습니다. 어떤 팀, 어떤 프로젝트에서도 자연스럽게 녹아드는 사람입니다.</p>
+          </li>
+          <li>
+            <div class="why-item-head">
+              <span class="why-num">02</span>
+              <span class="why-label">기본이 가장 강하다</span>
+              <span class="why-tag">#기본</span>
+            </div>
+            <p>검정색과 흰색은 가장 기본적인 색이지만, 잘 쓰면 가장 눈에 띕니다. 기본기가 곧 실력입니다.</p>
+          </li>
+          <li>
+            <div class="why-item-head">
+              <span class="why-num">03</span>
+              <span class="why-label">디테일을 아는 눈</span>
+              <span class="why-tag">#디테일</span>
+            </div>
+            <p>세상에는 수천 가지의 검정이 있습니다. 그 차이를 보는 눈이 디자인입니다.</p>
+          </li>
+        </ul>
+        </div><!-- /why-inner -->
+        </div><!-- /about-shell -->
+      </article>
+
+    </section>
+
+
+    <!-- ================================================
+         3. SKILLS
+    ================================================= -->
+    <section class="skills-wrap" id="skills" aria-label="Skills">
+      <div class="shell">
+        <div class="frame-line tl" aria-hidden="true"></div>
+        <div class="frame-line tr" aria-hidden="true"></div>
+        <div class="frame-line bl" aria-hidden="true"></div>
+        <div class="frame-line br" aria-hidden="true"></div>
+
+        <div class="hud-top">
+          <span>NOVA.SYS / SKILL METRICS</span>
+          <span>PROGRAM ICONS = IMAGE FILES</span>
+        </div>
+
+        <h2 class="section-title">Skills System</h2>
+
+        <div class="cards">
+
+          <article class="card" style="--accent: var(--mint);" data-percent="60">
+            <span class="card-corner a" aria-hidden="true"></span>
+            <span class="card-corner b" aria-hidden="true"></span>
+            <span class="card-corner c" aria-hidden="true"></span>
+            <span class="card-corner d" aria-hidden="true"></span>
+            <div class="card-head"><span class="card-no">01</span><span>Core Dev</span></div>
+            <div class="ring-wrap">
+              <div class="ring-base"></div>
+              <div class="ring-fill"></div>
+              <div class="ring-inner"></div>
+              <div class="icon-box">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+              </div>
+            </div>
+            <div class="label">Dev</div>
+            <div class="level">LV. 6</div>
+            <div class="meter"><span></span></div>
+            <div class="caption">HTML / CSS / JavaScript 기반의 <br>구조 설계와 퍼블리싱 구현.</div>
+          </article>
+
+          <article class="card" style="--accent: var(--purple);" data-percent="60">
+            <span class="card-corner a" aria-hidden="true"></span>
+            <span class="card-corner b" aria-hidden="true"></span>
+            <span class="card-corner c" aria-hidden="true"></span>
+            <span class="card-corner d" aria-hidden="true"></span>
+            <div class="card-head"><span class="card-no">02</span><span>Visual System</span></div>
+            <div class="ring-wrap">
+              <div class="ring-base"></div>
+              <div class="ring-fill"></div>
+              <div class="ring-inner"></div>
+              <div class="icon-box">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma">
+              </div>
+            </div>
+            <div class="label">Design</div>
+            <div class="level">LV. 6</div>
+            <div class="meter"><span></span></div>
+            <div class="caption">레이아웃 정리, 와이어프레임, <br> 시각 톤 조율과 UI 설계.</div>
+          </article>
+
+          <article class="card" style="--accent: var(--blue);" data-percent="60">
+            <span class="card-corner a" aria-hidden="true"></span>
+            <span class="card-corner b" aria-hidden="true"></span>
+            <span class="card-corner c" aria-hidden="true"></span>
+            <span class="card-corner d" aria-hidden="true"></span>
+            <div class="card-head"><span class="card-no">03</span><span>Interactive UI</span></div>
+            <div class="ring-wrap">
+              <div class="ring-base"></div>
+              <div class="ring-fill"></div>
+              <div class="ring-inner"></div>
+              <div class="icon-box">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+              </div>
+            </div>
+            <div class="label">Frontend</div>
+            <div class="level">LV. 6</div>
+            <div class="meter"><span></span></div>
+            <div class="caption">React 기반 컴포넌트 구조와<br> 인터랙션 중심의 화면 구현.</div>
+          </article>
+
+          <article class="card" style="--accent: var(--mint);" data-percent="80">
+            <span class="card-corner a" aria-hidden="true"></span>
+            <span class="card-corner b" aria-hidden="true"></span>
+            <span class="card-corner c" aria-hidden="true"></span>
+            <span class="card-corner d" aria-hidden="true"></span>
+            <div class="card-head"><span class="card-no">04</span><span>Visual Edit</span></div>
+            <div class="ring-wrap">
+              <div class="ring-base"></div>
+              <div class="ring-fill"></div>
+              <div class="ring-inner"></div>
+              <div class="icon-box">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/premierepro/premierepro-original.svg" alt="Premiere Pro">
+              </div>
+            </div>
+            <div class="label">Motion / Video</div>
+            <div class="level">LV. 8</div>
+            <div class="meter"><span></span></div>
+            <div class="caption">프리미어 중심의 편집, 화면 리듬 설계, <br>감성적인 전환 연출.</div>
+          </article>
+
+          <article class="card" style="--accent: var(--purple);" data-percent="90">
+            <span class="card-corner a" aria-hidden="true"></span>
+            <span class="card-corner b" aria-hidden="true"></span>
+            <span class="card-corner c" aria-hidden="true"></span>
+            <span class="card-corner d" aria-hidden="true"></span>
+            <div class="card-head"><span class="card-no">05</span><span>AI 활용</span></div>
+            <div class="ring-wrap">
+              <div class="ring-base"></div>
+              <div class="ring-fill"></div>
+              <div class="ring-inner"></div>
+              <div class="icon-box icon-text">AI</div>
+            </div>
+            <div class="label">AI 활용 능력</div>
+            <div class="level">LV. 9</div>
+            <div class="meter"><span></span></div>
+            <div class="caption">LLM 활용 설계, 프롬프트 엔지니어링, AI 기반 워크플로우 구축.</div>
+          </article>
+
+        </div>
+
+        <div class="hud-bottom">
+          <span>LV.9 = 90% / LV.8 = 80% / LV.6 = 60%</span>
+          <span>Simple Enough To Implement</span>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================================================
+         4. WORKS
+    ================================================= -->
+    <section class="stage" id="works" aria-label="Works">
+      <div class="frame-shell">
+        <div class="corner tl" aria-hidden="true"></div>
+        <div class="corner tr" aria-hidden="true"></div>
+        <div class="corner bl" aria-hidden="true"></div>
+        <div class="corner br" aria-hidden="true"></div>
+
+        <div class="hud-top">
+          <span>NOVA.SYS</span>
+        </div>
+
+        <p class="helper">To watch my project hover &amp; click each panel</p>
+
+        <div class="panels hover-0 shrink" id="panels">
+
+          <article class="panel active" data-index="0">
+            <div class="panel-corners" aria-hidden="true">
+              <span class="a"></span><span class="b"></span>
+              <span class="c"></span><span class="d"></span>
+            </div>
+            <div class="panel-inner">
+              <div class="panel-meta"><span class="panel-index">01</span><span>hello</span></div>
+              <div class="panel-body">
+                <h2 class="panel-title">Web Site <small class="outline">personal</small></h2>
+                <p class="mini-desc">스캔되는 초상과 함께 철학을 보여주는 칸. 첫 인상과 세계관을 담당하는 메인 영역.</p>
+                <div class="wire-area" aria-hidden="true">
+                  <div class="scan"></div>
+                  <div class="line h"></div>
+                  <div class="line v"></div>
+                  <div class="arc"></div>
+                  <div class="core"></div>
+                  <div class="diamond"></div>
+                  <div class="node n1"></div><div class="node n2"></div>
+                  <div class="node n3"></div><div class="node n4"></div>
+                  <div class="bars"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+                </div>
+              </div>
+              <div class="panel-footer">
+                <span><span class="status-dot" aria-hidden="true"></span></span>
+                <span class="right-copy">Structure / Tone / First Impression</span>
+              </div>
+            </div>
+            <div class="label-rail" aria-hidden="true">personal project</div>
+          </article>
+
+          <article class="panel" data-index="1">
+            <div class="panel-corners" aria-hidden="true">
+              <span class="a"></span><span class="b"></span>
+              <span class="c"></span><span class="d"></span>
+            </div>
+            <div class="panel-inner">
+              <div class="panel-meta"><span class="panel-index">02</span><span>hello</span></div>
+              <div class="panel-body">
+                <h2 class="panel-title">Group project <small class="outline">VIDEO</small></h2>
+                <p class="mini-desc">1분 자기소개 영상이 들어갈 칸. 감성적인 컷과 작업 흐름이 함께 들어가는 메인 미디어 영역.</p>
+                <div class="wire-area" aria-hidden="true">
+                  <div class="scan"></div>
+                  <div class="line h"></div>
+                  <div class="arc" style="animation-duration:8.6s;"></div>
+                  <div class="core" style="width:96px;height:96px;"></div>
+                  <div class="diamond"></div>
+                  <div class="node n1"></div><div class="node n2"></div>
+                  <div class="node n3"></div><div class="node n4"></div>
+                  <div class="bars"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+                </div>
+              </div>
+              <div class="panel-footer">
+                <span><span class="status-dot" aria-hidden="true"></span></span>
+                <span class="right-copy">Intro / Mood / Editing Flow</span>
+              </div>
+            </div>
+            <div class="label-rail" aria-hidden="true">Identity</div>
+          </article>
+
+          <article class="panel" data-index="2">
+            <div class="panel-corners" aria-hidden="true">
+              <span class="a"></span><span class="b"></span>
+              <span class="c"></span><span class="d"></span>
+            </div>
+            <div class="panel-inner">
+              <div class="panel-meta"><span class="panel-index">03</span><span>System</span></div>
+              <div class="panel-body">
+                <h2 class="panel-title">MONO <small class="outline">video</small></h2>
+                <p class="mini-desc">왜 구조를 먼저 보고 왜 모노톤을 쓰는지 설명하는 칸. 비교와 원칙이 들어가는 영역.</p>
+                <div class="wire-area" aria-hidden="true">
+                  <div class="scan"></div>
+                  <div class="line v"></div>
+                  <div class="arc" style="width:180px;height:180px;"></div>
+                  <div class="core" style="width:76px;height:76px;"></div>
+                  <div class="diamond"></div>
+                  <div class="node n1"></div><div class="node n2"></div>
+                  <div class="node n3"></div><div class="node n4"></div>
+                  <div class="bars"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+                </div>
+              </div>
+              <div class="panel-footer">
+                <span><span class="status-dot" aria-hidden="true"></span></span>
+                <span class="right-copy">Reason / Logic / Comparison</span>
+              </div>
+            </div>
+            <div class="label-rail" aria-hidden="true">System</div>
+          </article>
+
+          <article class="panel" data-index="3">
+            <div class="panel-corners" aria-hidden="true">
+              <span class="a"></span><span class="b"></span>
+              <span class="c"></span><span class="d"></span>
+            </div>
+            <div class="panel-inner">
+              <div class="panel-meta"><span class="panel-index">04</span><span>Works</span></div>
+              <div class="panel-body">
+                <h2 class="panel-title">SELECT <small class="outline">WORK</small></h2>
+                <p class="mini-desc">대표 작업물로 이어지는 칸. 선별된 결과물과 프로세스가 함께 담기는 아카이브 영역.</p>
+                <div class="wire-area" aria-hidden="true">
+                  <div class="scan"></div>
+                  <div class="line h"></div>
+                  <div class="arc" style="border-top-color:rgba(124,246,255,0.6);border-right-color:rgba(181,140,255,0.4);"></div>
+                  <div class="core" style="width:88px;height:88px;"></div>
+                  <div class="diamond"></div>
+                  <div class="node n1"></div><div class="node n2"></div>
+                  <div class="node n3"></div><div class="node n4"></div>
+                  <div class="bars"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+                </div>
+              </div>
+              <div class="panel-footer">
+                <span><span class="status-dot" aria-hidden="true"></span></span>
+                <span class="right-copy">Preview / Archive / Entry Point</span>
+              </div>
+            </div>
+            <div class="label-rail" aria-hidden="true">Works</div>
+          </article>
+
+        </div>
+
+        <div class="hud-bottom">
+          <span>Hover ratio / 60 : 13.333 : 13.333 : 13.333</span>
+          <span>Interactive HUD Frame Prototype</span>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================================================
+         5. CONTACT + FOOTER
+    ================================================= -->
+    <div class="contact-footer-wrap">
+    <section class="contact-wrap" id="contact" aria-label="Contact">
+      <div class="contact-shell">
+        <!-- 코너 장식 (pseudo-element로 tl/tr, 여기선 bl/br 추가) -->
+        <div class="contact-corner-bl" aria-hidden="true"></div>
+        <div class="contact-corner-br" aria-hidden="true"></div>
+
+        <div class="contact-hud-top" aria-hidden="true">
+          <span>NOVA.SYS / CONTACT</span>
+          <span>SYS_INIT_CONNECT</span>
+        </div>
+
+        <div class="contact-body">
+
+          <!-- 왼쪽: 타이틀 + 링크 -->
+          <div class="contact-left">
+            <h2 class="contact-title">CONTACT</h2>
+            <p class="contact-sub">
+              함께 만들고 싶은 것이 있다면<br>언제든지 연락 주세요.
+            </p>
+
+            <ul class="contact-links">
+              <li class="contact-link-item">
+                <span class="contact-link-label">EMAIL</span>
+                <a class="contact-link-value" href="mailto:nova.kim@portf.sys">nova.kim@portf.sys</a>
+              </li>
+              <li class="contact-link-item">
+                <span class="contact-link-label">GITHUB</span>
+                <a class="contact-link-value" href="https://github.com/nova-kim" target="_blank" rel="noopener noreferrer">github.com/nova-kim</a>
+              </li>
+              <li class="contact-link-item">
+                <span class="contact-link-label">NOTION</span>
+                <a class="contact-link-value" href="#" target="_blank" rel="noopener noreferrer">notion.so/nova-portfolio</a>
+              </li>
+              <li class="contact-link-item">
+                <span class="contact-link-label">INSTAGRAM</span>
+                <a class="contact-link-value" href="https://instagram.com/nova.kim" target="_blank" rel="noopener noreferrer">@nova.kim</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- 오른쪽: 메시지 폼 -->
+          <form class="contact-form" action="#" method="post" aria-label="메시지 보내기">
+            <div class="form-group">
+              <label class="form-label" for="contact-name">NAME</label>
+              <input class="form-input" id="contact-name" type="text" name="name" placeholder="Your name" autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="contact-email">EMAIL</label>
+              <input class="form-input" id="contact-email" type="email" name="email" placeholder="your@email.com" autocomplete="email">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="contact-message">MESSAGE</label>
+              <textarea class="form-textarea" id="contact-message" name="message" placeholder="What would you like to say?"></textarea>
+            </div>
+            <button class="form-submit" type="submit">SEND MESSAGE</button>
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer" aria-label="사이트 푸터">
+      <div class="footer-inner">
+        <span class="footer-logo">PORTF.SYS</span>
+        <small class="footer-copy">© 2025 Nova Kim. All rights reserved.</small>
+        <span class="footer-tag">Frontend Developer &amp; Web Publisher</span>
+      </div>
+    </footer>
+    </div><!-- /contact-footer-wrap -->
+
+  </main>
+
+
+  <script src="script_hero.js"></script>
+  <script src="script_side_nav.js"></script>
+  <script src="script_about.js"></script>
+  <script src="script_skills.js"></script>
+  <script src="script_works.js"></script>
+</body>
+</html>

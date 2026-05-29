@@ -1,0 +1,428 @@
+/* =========================
+   ABOUT — 공통
+========================= */
+.about-wrap {
+  background: #000;
+}
+
+/* skills의 .shell과 동일한 HUD 프레임 */
+.about-shell {
+  position: relative;
+  width: var(--frame-w);
+  height: var(--frame-h);
+  border: 1px solid rgba(124,246,255,0.16);
+  background: linear-gradient(180deg, rgba(6,8,14,0.74), rgba(3,4,9,0.92));
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02), 0 0 80px rgba(0,0,0,0.45);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-shell::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 18% 50%, rgba(124,246,255,0.05), transparent 22%);
+  pointer-events: none;
+}
+
+/* =========================
+   3-1  PHILOSOPHY
+========================= */
+.about-philosophy {
+  height: 100vh;
+  overflow: hidden;
+  scroll-snap-align: start;
+  padding: var(--frame-top) var(--frame-pad) var(--frame-pad);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 3페이지 공통 프레임 내부 컨텐츠 래퍼 — 동일 높이/너비/패딩 */
+.phil-inner,
+.mono-inner,
+.why-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 56px;
+  overflow: hidden;
+}
+
+/* 3페이지 공통 섹션 레이블 */
+.phil-section-label,
+.mono-section-label,
+.why-section-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 4px;
+  color: var(--mint);
+  opacity: 0.5;
+  margin-bottom: 44px;
+  display: block;
+}
+
+.phil-headline {
+  width: 100%;
+  margin-bottom: 60px;
+}
+
+.phil-headline p {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(1.2rem, 2vw, 2rem);
+  color: var(--mint);
+  line-height: 1.45;
+  letter-spacing: 1px;
+}
+
+.phil-body {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 1px 1fr;
+  gap: 0 72px;
+  align-items: center;
+}
+
+/* ---- 레이더 HUD ---- */
+.radar-hud {
+  position: relative;
+  width: 380px;
+  flex-shrink: 0;
+  margin-left: 20px;
+}
+
+.radar-frame-corners {
+  position: absolute;
+  inset: -20px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.radar-frame-corners span {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-color: rgba(124,246,255,0.6);
+  border-style: solid;
+}
+
+.radar-frame-corners span:nth-child(1) { top: 0; left: 0;  border-width: 2px 0 0 2px; }
+.radar-frame-corners span:nth-child(2) { top: 0; right: 0; border-width: 2px 2px 0 0; }
+.radar-frame-corners span:nth-child(3) { bottom: 0; left: 0;  border-width: 0 0 2px 2px; }
+.radar-frame-corners span:nth-child(4) { bottom: 0; right: 0; border-width: 0 2px 2px 0; }
+
+.radar-screen {
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, #071a10 0%, #030d07 80%);
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(0, 220, 120, 0.25);
+  box-shadow: 0 0 40px rgba(0,220,120,0.08) inset;
+}
+
+/* 동심원 그리드 */
+.radar-rings {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle, transparent 23.5%, rgba(0,220,120,0.14) 24%, transparent 24.5%),
+    radial-gradient(circle, transparent 48.5%, rgba(0,220,120,0.10) 49%, transparent 49.5%),
+    radial-gradient(circle, transparent 74%, rgba(0,220,120,0.07) 74.5%, transparent 75%);
+}
+
+/* 십자선 */
+.radar-cross {
+  position: absolute;
+  background: rgba(0,220,120,0.12);
+}
+.radar-cross.h { top: 50%; left: 0; right: 0; height: 1px; transform: translateY(-50%); }
+.radar-cross.v { left: 50%; top: 0; bottom: 0; width: 1px; transform: translateX(-50%); }
+
+/* 스윕 */
+.radar-sweep {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: center center;
+  animation: radarSpin 3s linear infinite;
+}
+
+.radar-sweep::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: conic-gradient(
+    from -90deg at 50% 50%,
+    rgba(0,220,120,0.55) 0deg,
+    rgba(0,220,120,0.10) 55deg,
+    transparent 60deg
+  );
+}
+
+@keyframes radarSpin {
+  to { transform: rotate(360deg); }
+}
+
+/* 블립 */
+.radar-blip {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #7cf6ff;
+  box-shadow: 0 0 10px 3px rgba(124,246,255,0.6);
+  animation: blipPulse 2.8s ease-in-out infinite;
+}
+
+.radar-blip.b1 { top: 36%; left: 43%; }
+.radar-blip.b2 { top: 58%; left: 26%; animation-delay: 1.1s; }
+
+@keyframes blipPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.25; transform: scale(0.7); }
+}
+
+.radar-coords {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 10px;
+  padding-right: 4px;
+  gap: 3px;
+}
+
+.radar-coords span {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.82rem;
+  color: var(--mint);
+  opacity: 0.75;
+}
+
+/* ---- 세로 구분선 ---- */
+.phil-divider {
+  height: 340px;
+  background: rgba(124,246,255,0.25);
+  align-self: center;
+}
+
+/* ---- 우측 텍스트 ---- */
+.phil-text {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.phil-text p {
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  line-height: 1.9;
+  color: var(--mint);
+  font-family: 'NexonLv1Gothic' ;
+  
+}
+
+
+/* =========================
+   3-2  MONO SYS (영상)
+========================= */
+.about-mono-sys {
+  height: 100vh;
+  overflow: hidden;
+  scroll-snap-align: start;
+  background: #000;
+  padding: var(--frame-top) var(--frame-pad) var(--frame-pad);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.mono-video-area {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-placeholder {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  aspect-ratio: 16 / 9;
+  background: #d8d8d8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-placeholder span {
+  font-family: 'Space Mono', monospace;
+  font-size: 1.3rem;
+  color: #444;
+  letter-spacing: 3px;
+}
+
+/* 영상이 있을 때 교체용 */
+.about-video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+
+/* =========================
+   3-3  WHY MONO
+========================= */
+.about-why-mono {
+  height: 100vh;
+  overflow: hidden;
+  scroll-snap-align: start;
+  background: #000;
+  padding: var(--frame-top) var(--frame-pad) var(--frame-pad);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.why-headline {
+  width: 100%;
+  font-size: clamp(1.4rem, 2.4vw, 2rem);
+  font-weight: 400;
+  line-height: 1.3;
+  color: var(--text);
+  margin-bottom: 12px;
+  font-family: 'NexonLv1Gothic' ;
+}
+
+.why-headline strong {
+  display: inline-block;
+  font-family: 'KblJumpExtended', sans-serif;
+  font-size: clamp(2.6rem, 5vw, 4.4rem);
+  font-weight: normal;
+  color: var(--text);
+  letter-spacing: 6px;
+  margin-right: 16px;
+  vertical-align: baseline;
+}
+
+.why-sub {
+  width: 100%;
+  font-size: clamp(0.95rem, 1.4vw, 1.1rem);
+  color: var(--sub);
+  margin-bottom: 48px;
+  letter-spacing: 0.5px;
+  font-family: 'NexonLv1Gothic' ;
+}
+
+.why-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.why-list li {
+  padding-left: 4px;
+  font-family: 'NexonLv1Gothic' ;
+}
+
+.why-item-head {
+  display: flex;
+  align-items: baseline;
+  gap: 24px;
+  margin-bottom: 10px;
+}
+
+.why-num {
+  font-family: 'Orbitron', monospace;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  color: var(--mint);
+  flex-shrink: 0;
+}
+
+.why-label {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.5px;
+}
+
+.why-tag {
+  font-family:'NexonLv1Gothic', monospace;
+  font-size: 0.85rem;
+  color: var(--mint);
+  margin-left: auto;
+  opacity: 0.75;
+}
+
+.why-list li p {
+  font-size: 0.98rem;
+  line-height: 1.85;
+  color: var(--sub);
+  padding-left: 46px;
+}
+
+
+/* =========================
+   반응형
+========================= */
+@media (max-width: 1100px) {
+  .phil-body {
+    grid-template-columns: 1fr;
+    gap: 60px 0;
+  }
+
+  .radar-hud {
+    width: 300px;
+  }
+
+  .radar-screen {
+    width: 300px;
+    height: 300px;
+  }
+
+  .phil-divider {
+    display: none;
+  }
+
+  .phil-text {
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-philosophy,
+  .about-mono-sys,
+  .about-why-mono {
+    padding: 60px 24px 80px;
+  }
+
+  .phil-headline p {
+    font-size: 1.1rem;
+  }
+
+  .why-headline strong {
+    font-size: 2.4rem;
+  }
+
+  .why-list li p {
+    padding-left: 0;
+  }
+
+  .why-tag {
+    display: none;
+  }
+}

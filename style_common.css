@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600&display=swap');
+@font-face {
+    font-family: 'RoundedFixedsys';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
+    font-weight: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'KblJumpExtended';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-5@1.0/KBLJump_EB_ExtendedTTF.woff2') format('woff2');
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NexonLv1Gothic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF Light.woff') format('woff');
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NexonLv1Gothic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NexonLv1Gothic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF Bold.woff') format('woff');
+    font-weight: 700;
+    font-display: swap;
+}
+
+:root {
+  --bg: #04050a;
+  --grid: rgba(255,255,255,0.05);
+  --mint: #7cf6ff;
+  --purple: #b58cff;
+  --blue: #3d8bff;
+  --text: #eef6fb;
+  --sub: rgba(238,246,251,0.62);
+  --line: rgba(124,246,255,0.18);
+  --side-bg: #00d4c8;
+  --overlay: rgba(0, 0, 0, 0.65);
+  /* 공통 프레임 사이즈 */
+  --frame-pad: 34px;
+  --frame-top: 80px;
+  --frame-w: min(1460px, calc(100vw - calc(var(--frame-pad) * 2)));
+  --frame-h: min(840px, calc(100vh - var(--frame-top) - var(--frame-pad)));
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 78% 50%, rgba(124,246,255,0.14), transparent 22%),
+    radial-gradient(circle at 82% 18%, rgba(181,140,255,0.08), transparent 20%),
+    linear-gradient(180deg, #030409 0%, #04050a 100%);
+}
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+body::before {
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px),
+    linear-gradient(rgba(124,246,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124,246,255,0.03) 1px, transparent 1px);
+  background-size: 34px 34px, 34px 34px, 170px 170px, 170px 170px;
+  opacity: .3;
+}
+
+body::after {
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 3px,
+    rgba(255,255,255,0.018) 3px,
+    rgba(255,255,255,0.018) 4px
+  );
+  opacity: .35;
+}

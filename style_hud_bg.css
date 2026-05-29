@@ -1,0 +1,101 @@
+/* =========================
+   HUD BACKGROUND — 페이지별 구분
+   섹션 ::before 레이어에 SVG 데코 + 컬러 그라디언트 글로우
+========================= */
+
+/* position: relative 보장 (::before 절대 위치 기준) */
+.about-philosophy,
+.about-mono-sys,
+.about-why-mono,
+.skills-wrap,
+.contact-footer-wrap {
+  position: relative;
+}
+
+/* 공통: HUD 배경 레이어 */
+.hero-wrap::before,
+.about-philosophy::before,
+.about-mono-sys::before,
+.about-why-mono::before,
+.skills-wrap::before,
+.stage::before,
+.contact-footer-wrap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* =========================
+   HERO — mint glow + top arc
+========================= */
+.hero-wrap::before {
+  background-image:
+    radial-gradient(ellipse 100% 55% at 50% 115%, rgba(124,246,255,0.22) 0%, rgba(124,246,255,0.06) 45%, transparent 70%),
+    radial-gradient(ellipse 60% 50% at 50% -10%, rgba(124,246,255,0.07) 0%, transparent 60%),
+    url('hud-bg-a.svg');
+}
+
+/* =========================
+   ABOUT 3-1 PHILOSOPHY — purple glow + top arc
+========================= */
+.about-philosophy::before {
+  background-image:
+    radial-gradient(ellipse 100% 55% at 50% 115%, rgba(181,140,255,0.22) 0%, rgba(181,140,255,0.06) 45%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 20% 50%, rgba(181,140,255,0.06) 0%, transparent 50%),
+    url('hud-bg-a.svg');
+}
+
+/* =========================
+   ABOUT 3-2 MONO SYS — blue glow + side arcs
+========================= */
+.about-mono-sys::before {
+  background-image:
+    radial-gradient(ellipse 100% 55% at 50% 115%, rgba(61,139,255,0.22) 0%, rgba(61,139,255,0.06) 45%, transparent 70%),
+    radial-gradient(ellipse 40% 80% at 0% 50%, rgba(61,139,255,0.07) 0%, transparent 50%),
+    radial-gradient(ellipse 40% 80% at 100% 50%, rgba(61,139,255,0.07) 0%, transparent 50%),
+    url('hud-bg-b.svg');
+}
+
+/* =========================
+   ABOUT 3-3 WHY MONO — mint/teal glow + angular
+========================= */
+.about-why-mono::before {
+  background-image:
+    radial-gradient(ellipse 100% 55% at 50% 115%, rgba(124,246,255,0.18) 0%, rgba(0,220,200,0.05) 45%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 80% 50%, rgba(124,246,255,0.05) 0%, transparent 50%),
+    url('hud-bg-c.svg');
+}
+
+/* =========================
+   SKILLS — purple glow + side arcs
+========================= */
+.skills-wrap::before {
+  background-image:
+    radial-gradient(ellipse 100% 55% at 50% 115%, rgba(181,140,255,0.22) 0%, rgba(181,140,255,0.06) 45%, transparent 70%),
+    radial-gradient(ellipse 40% 80% at 100% 50%, rgba(181,140,255,0.08) 0%, transparent 50%),
+    url('hud-bg-b.svg');
+}
+
+/* =========================
+   WORKS — blue glow + angular
+========================= */
+.stage::before {
+  background-image:
+    radial-gradient(ellipse 100% 55% at 50% 115%, rgba(61,139,255,0.22) 0%, rgba(61,139,255,0.06) 45%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 15% 50%, rgba(61,139,255,0.06) 0%, transparent 50%),
+    url('hud-bg-c.svg');
+}
+
+/* =========================
+   CONTACT + FOOTER — mint glow + top arc
+========================= */
+.contact-footer-wrap::before {
+  background-image:
+    radial-gradient(ellipse 100% 55% at 50% 115%, rgba(124,246,255,0.20) 0%, rgba(124,246,255,0.05) 45%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 50% -10%, rgba(124,246,255,0.06) 0%, transparent 60%),
+    url('hud-bg-a.svg');
+}

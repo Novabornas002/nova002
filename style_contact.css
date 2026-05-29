@@ -1,0 +1,287 @@
+/* =========================
+   CONTACT + FOOTER 스냅 래퍼
+========================= */
+.contact-footer-wrap {
+  height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+}
+
+/* =========================
+   CONTACT
+========================= */
+.contact-wrap {
+  flex: 1;
+  background: #000;
+  padding: var(--frame-top) var(--frame-pad) var(--frame-pad);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid rgba(124,246,255,0.08);
+}
+
+.contact-shell {
+  position: relative;
+  width: var(--frame-w);
+  height: var(--frame-h);
+  padding: 64px 80px 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid rgba(124,246,255,0.18);
+  background:
+    radial-gradient(circle at 15% 85%, rgba(124,246,255,0.04), transparent 45%),
+    radial-gradient(circle at 85% 15%, rgba(181,140,255,0.03), transparent 40%),
+    rgba(4,5,10,0.7);
+}
+
+/* 코너 장식 */
+.contact-shell::before,
+.contact-shell::after,
+.contact-shell .contact-corner-bl,
+.contact-shell .contact-corner-br {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-color: rgba(124,246,255,0.75);
+  border-style: solid;
+  pointer-events: none;
+}
+.contact-shell::before       { top: -1px;    left: -1px;  border-width: 2px 0 0 2px; }
+.contact-shell::after        { top: -1px;    right: -1px; border-width: 2px 2px 0 0; }
+.contact-corner-bl           { bottom: -1px; left: -1px;  border-width: 0 0 2px 2px; }
+.contact-corner-br           { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
+
+.contact-hud-top {
+  position: absolute;
+  top: 16px;
+  left: 24px;
+  right: 24px;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: rgba(238,246,251,0.35);
+  text-transform: uppercase;
+}
+
+/* 내용 레이아웃 */
+.contact-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+  padding-top: 24px;
+}
+
+/* 왼쪽 — 타이틀 + 링크 목록 */
+.contact-left {
+  padding-top: 8px;
+}
+
+.contact-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(2.4rem, 4vw, 3.8rem);
+  font-weight: 900;
+  letter-spacing: 8px;
+  color: var(--mint);
+  margin-bottom: 12px;
+  line-height: 1;
+}
+
+.contact-sub {
+  font-size: 0.95rem;
+  color: var(--sub);
+  letter-spacing: 1px;
+  margin-bottom: 56px;
+  line-height: 1.6;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.contact-link-item {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(124,246,255,0.12);
+  transition: border-color 0.2s ease;
+}
+
+.contact-link-item:hover {
+  border-color: rgba(124,246,255,0.4);
+}
+
+.contact-link-label {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 3px;
+  color: var(--mint);
+  min-width: 72px;
+}
+
+.contact-link-value {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.95rem;
+  color: var(--text);
+  transition: color 0.2s ease;
+}
+
+.contact-link-value:hover {
+  color: var(--mint);
+}
+
+/* 오른쪽 — 메시지 폼 */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-label {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  color: var(--mint);
+  opacity: 0.8;
+}
+
+.form-input,
+.form-textarea {
+  background: rgba(124,246,255,0.03);
+  border: 1px solid rgba(124,246,255,0.18);
+  color: var(--text);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.9rem;
+  padding: 14px 16px;
+  outline: none;
+  transition: border-color 0.2s ease, background 0.2s ease;
+  resize: none;
+  letter-spacing: 0.5px;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: rgba(124,246,255,0.55);
+  background: rgba(124,246,255,0.06);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: rgba(238,246,251,0.25);
+}
+
+.form-textarea {
+  min-height: 130px;
+}
+
+.form-submit {
+  align-self: flex-start;
+  padding: 16px 40px;
+  background: var(--mint);
+  color: #000;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  margin-top: 4px;
+}
+
+.form-submit:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+.site-footer {
+  background: #000;
+  border-top: 1px solid rgba(124,246,255,0.1);
+  padding: 36px 56px;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.footer-logo {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 4px;
+  color: var(--mint);
+}
+
+.footer-copy {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  color: rgba(238,246,251,0.3);
+  letter-spacing: 1px;
+}
+
+.footer-tag {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  color: rgba(238,246,251,0.2);
+  letter-spacing: 1px;
+}
+
+
+/* =========================
+   반응형
+========================= */
+@media (max-width: 1000px) {
+  .contact-body {
+    grid-template-columns: 1fr;
+    gap: 56px;
+  }
+
+  .contact-shell {
+    padding: 56px 40px 64px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-wrap {
+    padding: 60px 20px;
+  }
+
+  .contact-shell {
+    padding: 52px 24px 56px;
+  }
+
+  .contact-title {
+    font-size: 2.2rem;
+    letter-spacing: 5px;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .footer-tag {
+    display: none;
+  }
+}

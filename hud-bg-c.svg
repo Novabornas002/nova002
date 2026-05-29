@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+  <!-- Diagonal corner lines -->
+  <line x1="0" y1="220" x2="280" y2="0" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  <line x1="1440" y1="220" x2="1160" y2="0" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  <line x1="0" y1="680" x2="280" y2="900" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  <line x1="1440" y1="680" x2="1160" y2="900" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  <!-- Inner diagonal lines (smaller) -->
+  <line x1="0" y1="340" x2="140" y2="220" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+  <line x1="1440" y1="340" x2="1300" y2="220" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+  <line x1="0" y1="560" x2="140" y2="680" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+  <line x1="1440" y1="560" x2="1300" y2="680" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+  <!-- Horizontal measurement lines -->
+  <line x1="0" y1="245" x2="1440" y2="245" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  <line x1="0" y1="655" x2="1440" y2="655" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  <!-- Corner brackets (wider/larger) -->
+  <polyline points="24,84 24,24 84,24" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="1.5"/>
+  <polyline points="1416,84 1416,24 1356,24" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="1.5"/>
+  <polyline points="24,816 24,876 84,876" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="1.5"/>
+  <polyline points="1416,816 1416,876 1356,876" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="1.5"/>
+  <!-- Inner corner brackets -->
+  <polyline points="48,80 48,48 80,48" fill="none" stroke="rgba(255,255,255,0.09)" stroke-width="1"/>
+  <polyline points="1392,80 1392,48 1360,48" fill="none" stroke="rgba(255,255,255,0.09)" stroke-width="1"/>
+  <polyline points="48,820 48,852 80,852" fill="none" stroke="rgba(255,255,255,0.09)" stroke-width="1"/>
+  <polyline points="1392,820 1392,852 1360,852" fill="none" stroke="rgba(255,255,255,0.09)" stroke-width="1"/>
+  <!-- Small squares at corners -->
+  <rect x="20" y="20" width="6" height="6" fill="rgba(255,255,255,0.15)"/>
+  <rect x="1414" y="20" width="6" height="6" fill="rgba(255,255,255,0.15)"/>
+  <rect x="20" y="874" width="6" height="6" fill="rgba(255,255,255,0.15)"/>
+  <rect x="1414" y="874" width="6" height="6" fill="rgba(255,255,255,0.15)"/>
+  <!-- Top/bottom center ticks -->
+  <line x1="720" y1="20" x2="720" y2="46" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+  <line x1="720" y1="854" x2="720" y2="880" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+  <!-- Left/right center ticks -->
+  <line x1="20" y1="450" x2="46" y2="450" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+  <line x1="1394" y1="450" x2="1420" y2="450" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+  <!-- Center marker squares -->
+  <rect x="713" y="17" width="14" height="14" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
+  <rect x="713" y="869" width="14" height="14" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
+  <!-- Diamond markers at sides -->
+  <rect x="11" y="441" width="18" height="18" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.2)" stroke-width="1" transform="rotate(45 20 450)"/>
+  <rect x="1411" y="441" width="18" height="18" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.2)" stroke-width="1" transform="rotate(45 1420 450)"/>
+  <!-- Dashed lines top/bottom -->
+  <line x1="96" y1="24" x2="600" y2="24" stroke="rgba(255,255,255,0.09)" stroke-width="1" stroke-dasharray="4 8"/>
+  <line x1="840" y1="24" x2="1344" y2="24" stroke="rgba(255,255,255,0.09)" stroke-width="1" stroke-dasharray="4 8"/>
+  <line x1="96" y1="876" x2="600" y2="876" stroke="rgba(255,255,255,0.09)" stroke-width="1" stroke-dasharray="4 8"/>
+  <line x1="840" y1="876" x2="1344" y2="876" stroke="rgba(255,255,255,0.09)" stroke-width="1" stroke-dasharray="4 8"/>
+  <!-- 3-dot groups at sides -->
+  <circle cx="52" cy="432" r="2" fill="rgba(255,255,255,0.28)"/>
+  <circle cx="52" cy="450" r="2" fill="rgba(255,255,255,0.28)"/>
+  <circle cx="52" cy="468" r="2" fill="rgba(255,255,255,0.28)"/>
+  <circle cx="1388" cy="432" r="2" fill="rgba(255,255,255,0.28)"/>
+  <circle cx="1388" cy="450" r="2" fill="rgba(255,255,255,0.28)"/>
+  <circle cx="1388" cy="468" r="2" fill="rgba(255,255,255,0.28)"/>
+  <!-- Measurement ticks at horizontal lines -->
+  <line x1="24" y1="245" x2="56" y2="245" stroke="rgba(255,255,255,0.18)" stroke-width="1.5"/>
+  <line x1="1384" y1="245" x2="1416" y2="245" stroke="rgba(255,255,255,0.18)" stroke-width="1.5"/>
+  <line x1="24" y1="655" x2="56" y2="655" stroke="rgba(255,255,255,0.18)" stroke-width="1.5"/>
+  <line x1="1384" y1="655" x2="1416" y2="655" stroke="rgba(255,255,255,0.18)" stroke-width="1.5"/>
+  <!-- Triangle indicators at horizontal lines -->
+  <polygon points="720,238 728,252 712,252" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+  <polygon points="720,662 728,648 712,648" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+  <!-- Mid-edge bracket marks at horizontal lines -->
+  <line x1="24" y1="236" x2="24" y2="254" stroke="rgba(255,255,255,0.14)" stroke-width="1.5"/>
+  <line x1="1416" y1="236" x2="1416" y2="254" stroke="rgba(255,255,255,0.14)" stroke-width="1.5"/>
+  <line x1="24" y1="646" x2="24" y2="664" stroke="rgba(255,255,255,0.14)" stroke-width="1.5"/>
+  <line x1="1416" y1="646" x2="1416" y2="664" stroke="rgba(255,255,255,0.14)" stroke-width="1.5"/>
+  <!-- Chevrons at bottom -->
+  <polyline points="692,855 720,836 748,855" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="1"/>
+  <polyline points="692,869 720,850 748,869" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+  <!-- Extra angular markers at mid-horizontal intersections -->
+  <polyline points="706,238 720,224 734,238" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+</svg>
